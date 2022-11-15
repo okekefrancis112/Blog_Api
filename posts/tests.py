@@ -5,12 +5,13 @@ from .models import Post
 # Create your tests here.
 
 class BlogTests(TestCase):
+    
     @classmethod
     def setUpTestData(cls):
         
         # Create a User
-        testuser1 = User.objects.create(
-            author=testuser1, title='Blog title', body='Body content...',
+        testuser1 = User.objects.create_user(
+            username='testuser1', password='abc123',
         )
         testuser1.save()
         
